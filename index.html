@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Группалашыма арналган 8-Март 🌸</title>
+
+  <style>
+    :root{
+      --bg1:#ff8fb1;
+      --bg2:#ffc3d8;
+      --bg3:#ffd9ec;
+      --bg4:#fff0f7;
+      --glass: rgba(255,255,255,0.16);
+      --glass-border: rgba(255,255,255,0.28);
+      --text:#ffffff;
+      --dark:#3b1630;
+      --accent:#ff4f93;
+      --accent2:#ff78ad;
+      --gold:#ffd86b;
+      --shadow: 0 20px 60px rgba(87, 15, 54, 0.25);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      overflow-x:hidden;
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.35), transparent 18%),
+        radial-gradient(circle at 80% 25%, rgba(255,255,255,.28), transparent 15%),
+        radial-gradient(circle at 70% 80%, rgba(255,255,255,.22), transparent 18%),
+        linear-gradient(-45deg, var(--bg1), var(--bg2), var(--bg3), #ffc7e5, #fbb1d1);
+      background-size: 200% 200%;
+      animation: gradientMove 14s ease infinite;
+      position: relative;
+    }
+
+    @keyframes gradientMove{
+      0%{ background-position:0% 50%; }
+      50%{ background-position:100% 50%; }
+      100%{ background-position:0% 50%; }
+    }
+
+    .bg-blur{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      overflow:hidden;
+      z-index:0;
+    }
+
+    .orb{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(40px);
+      opacity:.45;
+      animation: floatOrb linear infinite;
+    }
+
+    .orb1{
+      width:220px; height:220px;
+      background:#ffffff;
+      left:5%; top:10%;
+      animation-duration:16s;
+    }
+
+    .orb2{
+      width:280px; height:280px;
+      background:#ffd4e6;
+      right:8%; top:15%;
+      animation-duration:20s;
+    }
+
+    .orb3{
+      width:200px; height:200px;
+      background:#fff0a8;
+      left:15%; bottom:10%;
+      animation-duration:18s;
+    }
+
+    .orb4{
+      width:240px; height:240px;
+      background:#ffb0cb;
+      right:10%; bottom:8%;
+      animation-duration:22s;
+    }
+
+    @keyframes floatOrb{
+      0%{ transform:translateY(0) translateX(0) scale(1); }
+      50%{ transform:translateY(-30px) translateX(20px) scale(1.08); }
+      100%{ transform:translateY(0) translateX(0) scale(1); }
+    }
+
+    .particles{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:1;
+      overflow:hidden;
+    }
+
+    .particle{
+      position:absolute;
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.65);
+      box-shadow:0 0 12px rgba(255,255,255,0.9);
+      animation: rise linear infinite;
+    }
+
+    @keyframes rise{
+      0%{
+        transform:translateY(100vh) scale(.7);
+        opacity:0;
+      }
+      15%{
+        opacity:1;
+      }
+      100%{
+        transform:translateY(-20vh) scale(1.2);
+        opacity:0;
+      }
+    }
+
+    .flowers-rain{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:2;
+      overflow:hidden;
+    }
+
+    .flower{
+      position:absolute;
+      top:-50px;
+      font-size:22px;
+      animation: fallFlower linear forwards;
+      opacity:.95;
+      filter:drop-shadow(0 4px 10px rgba(0,0,0,.15));
+    }
+
+    @keyframes fallFlower{
+      0%{
+        transform:translateY(-10vh) rotate(0deg);
+      }
+      100%{
+        transform:translateY(120vh) rotate(360deg);
+      }
+    }
+
+    .container{
+      position:relative;
+      z-index:3;
+      width:min(1150px, 92%);
+      margin:0 auto;
+      padding:30px 0 70px;
+    }
+
+    .topbar{
+      position:sticky;
+      top:12px;
+      z-index:30;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      padding:14px 18px;
+      border:1px solid var(--glass-border);
+      background:rgba(255,255,255,0.14);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      border-radius:22px;
+      box-shadow: var(--shadow);
+      margin-bottom:22px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:18px;
+      font-weight:700;
+      color:white;
+      letter-spacing:.3px;
+    }
+
+    .top-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      padding:12px 16px;
+      border-radius:14px;
+      font-size:15px;
+      font-weight:700;
+      transition:.25s ease;
+      box-shadow:0 10px 25px rgba(0,0,0,.12);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn:active{
+      transform:scale(.97);
+    }
+
+    .btn-white{
+      background:white;
+      color:var(--dark);
+    }
+
+    .btn-pink{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:white;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:24px;
+      align-items:stretch;
+    }
+
+    .glass-card{
+      position:relative;
+      background:var(--glass);
+      border:1px solid var(--glass-border);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      border-radius:30px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .left-panel{
+      padding:34px;
+      min-height:650px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      width:max-content;
+      padding:10px 14px;
+      background:rgba(255,255,255,0.18);
+      border:1px solid rgba(255,255,255,0.25);
+      border-radius:999px;
+      font-size:14px;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      font-size:clamp(34px, 5vw, 62px);
+      line-height:1.05;
+      margin-bottom:16px;
+      text-shadow:0 8px 30px rgba(120, 18, 71, .20);
+    }
+
+    .hero h1 span{
+      color:#fff3a8;
+      text-shadow:0 0 18px rgba(255, 243, 168, .45);
+    }
+
+    .name-line{
+      font-size:clamp(20px, 2.4vw, 30px);
+      font-weight:700;
+      color:#fff;
+      margin-bottom:16px;
+      opacity:.95;
+    }
+
+    .typing-box{
+      min-height:200px;
+      padding:20px;
+      border-radius:22px;
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.18);
+      line-height:1.8;
+      font-size:18px;
+      color:#fff;
+      box-shadow: inset 0 0 30px rgba(255,255,255,.04);
+    }
+
+    .hero-buttons{
+      margin-top:22px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .stats{
+      margin-top:18px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .stat{
+      flex:1 1 140px;
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.18);
+      border-radius:20px;
+      padding:16px;
+      text-align:center;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:24px;
+      margin-bottom:4px;
+      color:#fff7c0;
+    }
+
+    .right-panel{
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .photo-wrap{
+      position:relative;
+      width:100%;
+      max-width:440px;
+      margin:0 auto;
+      padding:14px;
+      border-radius:32px;
+      background:linear-gradient(135deg, rgba(255,255,255,.35), rgba(255,255,255,.08));
+      border:1px solid rgba(255,255,255,0.26);
+      box-shadow:
+        0 20px 50px rgba(140, 26, 82, .25),
+        inset 0 0 30px rgba(255,255,255,.08);
+      animation: photoFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes photoFloat{
+      0%,100%{ transform:translateY(0); }
+      50%{ transform:translateY(-10px); }
+    }
+
+    .photo-ring{
+      position:absolute;
+      inset:-8px;
+      border-radius:38px;
+      border:2px solid rgba(255,255,255,0.45);
+      animation: spinSlow 12s linear infinite;
+      pointer-events:none;
+    }
+
+    @keyframes spinSlow{
+      from{ transform:rotate(0deg); }
+      to{ transform:rotate(360deg); }
+    }
+
+    .photo{
+      position:relative;
+      border-radius:26px;
+      overflow:hidden;
+      aspect-ratio: 4 / 5;
+      background:linear-gradient(135deg,#ffd5e6,#fff1f7);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:1s ease;
+    }
+
+    .photo:hover img{
+      transform:scale(1.05);
+    }
+
+    .glow{
+      position:absolute;
+      width:120px;
+      height:120px;
+      background:radial-gradient(circle, rgba(255,255,255,.75), transparent 70%);
+      border-radius:50%;
+      filter:blur(10px);
+      top:10%;
+      left:8%;
+      pointer-events:none;
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow{
+      0%,100%{ transform:scale(1); opacity:.7; }
+      50%{ transform:scale(1.18); opacity:1; }
+    }
+
+    .photo-caption{
+      text-align:center;
+      font-size:16px;
+      line-height:1.7;
+      padding:14px 10px 4px;
+      color:#fff;
+      opacity:.95;
+    }
+
+    .mini-wishes{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+    }
+
+    .wish-card{
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.16);
+      font-size:15px;
+      line-height:1.6;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .section{
+      margin-top:24px;
+    }
+
+    .love-note{
+      padding:30px;
+    }
+
+    .section-title{
+      font-size:28px;
+      margin-bottom:16px;
+      text-align:center;
+    }
+
+    .section-text{
+      max-width:850px;
+      margin:0 auto;
+      font-size:18px;
+      line-height:1.9;
+      text-align:center;
+      opacity:.98;
+    }
+
+    .memory-grid{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .memory{
+      padding:22px;
+      border-radius:22px;
+      background:rgba(255,255,255,0.13);
+      border:1px solid rgba(255,255,255,0.16);
+      text-align:center;
+    }
+
+    .memory .icon{
+      font-size:34px;
+      margin-bottom:10px;
+    }
+
+    .memory h3{
+      margin-bottom:8px;
+      font-size:20px;
+    }
+
+    .memory p{
+      line-height:1.7;
+      font-size:15px;
+      opacity:.95;
+    }
+
+    .footer-box{
+      margin-top:24px;
+      padding:25px;
+      text-align:center;
+      font-size:16px;
+      line-height:1.8;
+    }
+
+    .signature{
+      margin-top:14px;
+      font-size:22px;
+      font-weight:700;
+      color:#fff4b7;
+      text-shadow:0 0 14px rgba(255,244,183,.35);
+    }
+
+    .heart-burst{
+      position:fixed;
+      font-size:24px;
+      pointer-events:none;
+      z-index:50;
+      animation: heartBurst 1.8s ease forwards;
+      text-shadow:0 4px 14px rgba(0,0,0,.15);
+    }
+
+    @keyframes heartBurst{
+      0%{
+        opacity:1;
+        transform:translate(-50%,-50%) scale(.4);
+      }
+      100%{
+        opacity:0;
+        transform:translate(-50%, -180px) scale(1.6) rotate(15deg);
+      }
+    }
+
+    .shine{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, transparent 20%, rgba(255,255,255,.35) 40%, transparent 60%);
+      transform:translateX(-120%);
+      animation: shineMove 4.5s ease-in-out infinite;
+      pointer-events:none;
+    }
+
+    @keyframes shineMove{
+      0%{ transform:translateX(-120%); }
+      50%{ transform:translateX(120%); }
+      100%{ transform:translateX(120%); }
+    }
+
+    .music-visualizer{
+      display:flex;
+      justify-content:center;
+      gap:6px;
+      margin-top:8px;
+      height:30px;
+      align-items:flex-end;
+    }
+
+    .music-visualizer span{
+      width:6px;
+      height:8px;
+      border-radius:10px;
+      background:white;
+      animation: eq 1s ease-in-out infinite;
+      opacity:.85;
+    }
+
+    .music-visualizer span:nth-child(2){ animation-delay:.15s; }
+    .music-visualizer span:nth-child(3){ animation-delay:.30s; }
+    .music-visualizer span:nth-child(4){ animation-delay:.45s; }
+    .music-visualizer span:nth-child(5){ animation-delay:.60s; }
+
+    @keyframes eq{
+      0%,100%{ height:8px; }
+      50%{ height:26px; }
+    }
+
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(25, 5, 17, .72);
+      backdrop-filter:blur(8px);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+      z-index:100;
+      opacity:0;
+      pointer-events:none;
+      transition:.35s ease;
+    }
+
+    .modal.show{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    .modal-content{
+      width:min(560px, 100%);
+      background:rgba(255,255,255,0.16);
+      border:1px solid rgba(255,255,255,0.24);
+      backdrop-filter:blur(16px);
+      border-radius:28px;
+      padding:30px;
+      text-align:center;
+      box-shadow:0 20px 60px rgba(0,0,0,.22);
+      animation: popup .35s ease;
+    }
+
+    @keyframes popup{
+      from{ transform:translateY(20px) scale(.96); opacity:0; }
+      to{ transform:translateY(0) scale(1); opacity:1; }
+    }
+
+    .modal h2{
+      font-size:30px;
+      margin-bottom:10px;
+    }
+
+    .modal p{
+      font-size:18px;
+      line-height:1.7;
+      margin-bottom:18px;
+    }
+
+    .hint-box{
+      margin-top:14px;
+      padding:14px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.12);
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    @media (max-width: 980px){
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      .left-panel{
+        min-height:auto;
+      }
+
+      .right-panel{
+        order:-1;
+      }
+
+      .memory-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 680px){
+      .container{
+        width:min(94%, 94%);
+        padding-top:16px;
+      }
+
+      .topbar{
+        padding:12px;
+        border-radius:18px;
+      }
+
+      .brand{
+        font-size:15px;
+      }
+
+      .top-actions{
+        gap:8px;
+      }
+
+      .btn{
+        padding:10px 12px;
+        font-size:14px;
+      }
+
+      .left-panel,
+      .right-panel,
+      .love-note,
+      .footer-box{
+        padding:20px;
+      }
+
+      .typing-box{
+        font-size:16px;
+        min-height:190px;
+      }
+
+      .mini-wishes{
+        grid-template-columns:1fr;
+      }
+
+      .section-title{
+        font-size:24px;
+      }
+
+      .section-text{
+        font-size:16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-blur">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="orb orb4"></div>
+  </div>
+
+  <div class="particles" id="particles"></div>
+  <div class="flowers-rain" id="flowersRain"></div>
+
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">🌸 </div>
+
+      <div class="top-actions">
+        <button class="btn btn-white" onclick="toggleMusic()">🎵 Музыка</button>
+        <button class="btn btn-pink" onclick="openWish()">💌 Куттуктоо</button>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="glass-card left-panel">
+        <div class="shine"></div>
+
+        <div class="badge">✨ Жылуу сөздөр</div>
+
+        <div class="name-line">Жаркын мүнөздүү  — <span id="personName">Айдана</span> 🌷</div>
+
+        <h1>
+        Жөнөкөйлүк адамды сулуу кылат, <br>
+        жакшы мүнөз аны баалуу кылат. <br>
+        </h1>
+
+        <div class="typing-box" id="typedMessage"></div>
+
+        <div class="hero-buttons">
+          <button class="btn btn-white" onclick="releaseHearts()">🌸 Гүлдөрдү учур</button>
+          <button class="btn btn-pink" onclick="scrollToLetter()">💐 Төмөндөгү куттуктоону оку</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong id="loveCounter">0</strong>
+            кооз ирмем
+          </div>
+          <div class="stat">
+            <strong>∞</strong>
+            жакшы тилек
+          </div>
+          <div class="stat">
+            <strong>100%</strong>
+            жакшы маанай
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card right-panel">
+        <div class="photo-wrap">
+          <div class="photo-ring"></div>
+          <div class="photo">
+            <div class="glow"></div>
+            <img src="айдана3.png" alt="сурот">
+          </div>
+        </div>
+
+        <div class="photo-caption">
+          Жылмайганың айланага жылуулук тартуулайт ☀️<br>
+          Бүгүнкү күн сага кубаныч алып келсин.
+        </div>
+
+        <div class="mini-wishes">
+          <div class="wish-card">🌷 Ар бир күнүң ийгиликке толсун</div>
+          <div class="wish-card">💐 Ар дайым шайыр маанайда бол</div>
+          <div class="wish-card">✨ Кыялдарың орундалсын</div>
+          <div class="wish-card">🌸 Ар дайым жаркын бойдон кал</div>
+        </div>
+
+        <div class="music-visualizer" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section glass-card love-note" id="letterSection">
+      <h2 class="section-title">💌 Куттуктоо сөздөр 💌</h2>
+      <p class="section-text">
+Сенин жылмайганың айланага жарык чачкандай сезилет. 
+Жөнөкөй мүнөзүң, жакшы жүрөгүң жана жылуу мамилең 
+айланаңдагы адамдарга дайыма жакшы маанай тартуулайт.  
+
+Ар дайым ушундай жаркырап жүрө бер, 
+жашооң кубанычка, ийгиликке жана 
+жакшы күндөргө толсун. 🌸
+      </p>
+
+      <div class="memory-grid">
+        <div class="memory">
+          <div class="icon">🌸</div>
+          <h3>Жакшылык</h3>
+          <p>
+            Сенин жөнөкөйлүгүң жана жакшы мамилең ар дайым жагымдуу таасир калтырат.
+          </p>
+        </div>
+
+        <div class="memory">
+          <div class="icon">✨</div>
+          <h3>Жаркындык</h3>
+          <p>
+            Сен бар жерде маанай дагы жакшырып, баары жеңилирээк сезилет.
+          </p>
+        </div>
+
+        <div class="memory">
+          <div class="icon">💐</div>
+          <h3>Ийгилик</h3>
+          <p>
+            Окууда, жашоодо жана максаттарыңда ар дайым ийгилик коштоп жүрсүн.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section glass-card footer-box">
+      <div style="font-size:20px;">
+        Бул барак сага жакшы маанай тартуулоо үчүн жасалды 💐
+      </div>
+      <div class="signature">
+        Группалашыңдан белек 🌸
+      </div>
+    </section>
+  </div>
+
+  <div class="modal" id="wishModal">
+    <div class="modal-content">
+      <h2>🌷 Жылуу куттуктоо</h2>
+      <p id="randomWishText">
+        Бүгүнкү майрам сага көп кубаныч, жылмаюу жана ийгилик алып келсин.
+      </p>
+      <button class="btn btn-pink" onclick="closeWish()">Жабуу</button>
+
+      <div class="hint-box">
+        Бул барак 8-Мартка карата жакшы маанай жана кооз куттуктоо үчүн жасалды 🌸
+      </div>
+    </div>
+  </div>
+
+  <audio id="music" loop src="music4.mp3"></audio>
+
+  <script>
+    const personName = "Айдана";
+    document.getElementById("personName").textContent = personName;
+
+    const message = `
+🌸 Айдана,
+
+ сенин күлкүң адамдарга кубаныч тартуулайт. 
+ Жөнөкөй табиятың жана мээримдүү жүрөгүң баарына дем берет. 
+ Ар дайым тилегиңе жетип, жашоодо көп ийгиликтерди көр. 
+ Ар бир күнүңдү кубаныч коштоп жүрсүн! ✨
+`;
+
+    const typedEl = document.getElementById("typedMessage");
+    let index = 0;
+
+    function typeText(){
+      if(index < message.length){
+        typedEl.innerHTML += message.charAt(index);
+        index++;
+        setTimeout(typeText, 32);
+      }
+    }
+    typeText();
+
+    function createParticles(){
+      const wrap = document.getElementById("particles");
+      for(let i=0; i<28; i++){
+        const p = document.createElement("div");
+        p.className = "particle";
+        p.style.left = Math.random() * 100 + "vw";
+        p.style.animationDuration = (8 + Math.random() * 10) + "s";
+        p.style.animationDelay = (Math.random() * 5) + "s";
+        p.style.opacity = (0.25 + Math.random() * 0.6);
+        wrap.appendChild(p);
+      }
+    }
+    createParticles();
+
+    function createFlower(){
+      const rain = document.getElementById("flowersRain");
+      const flower = document.createElement("div");
+      flower.className = "flower";
+      const items = ["🌸","🌷","💮","🌺","✨"];
+      flower.textContent = items[Math.floor(Math.random() * items.length)];
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+      flower.style.fontSize = (18 + Math.random() * 18) + "px";
+      rain.appendChild(flower);
+
+      setTimeout(() => flower.remove(), 11000);
+    }
+    setInterval(createFlower, 550);
+
+    let loveCount = 0;
+    function addHeart(x, y, emoji = "🌸"){
+      loveCount++;
+      document.getElementById("loveCounter").textContent = loveCount;
+
+      const heart = document.createElement("div");
+      heart.className = "heart-burst";
+      heart.textContent = emoji;
+      heart.style.left = x + "px";
+      heart.style.top = y + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 1800);
+    }
+
+    document.addEventListener("click", (e) => {
+      if(
+        e.target.tagName !== "BUTTON" &&
+        e.target.tagName !== "A"
+      ){
+        const emojis = ["🌸","✨","💐","🌷"];
+        addHeart(
+          e.clientX,
+          e.clientY,
+          emojis[Math.floor(Math.random()*emojis.length)]
+        );
+      }
+    });
+
+    document.addEventListener("touchstart", (e) => {
+      const t = e.touches[0];
+      const emojis = ["🌸","✨","💐","🌷"];
+      addHeart(
+        t.clientX,
+        t.clientY,
+        emojis[Math.floor(Math.random()*emojis.length)]
+      );
+    }, { passive:true });
+
+    function releaseHearts(){
+      for(let i=0; i<22; i++){
+        setTimeout(() => {
+          addHeart(
+            Math.random() * window.innerWidth,
+            window.innerHeight - (Math.random() * 120),
+            ["🌸","✨","💐","🌷"][Math.floor(Math.random()*4)]
+          );
+        }, i * 80);
+      }
+    }
+
+    function scrollToLetter(){
+      document.getElementById("letterSection").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    const wishes = [
+      "Майрамың кут болсун! Ар дайым күлүп жүр 🌸",
+      "Окууда жана жашоодо чоң ийгиликтерди каалайм ✨",
+      "Ар бир күнүң кооз жана кубанычтуу өтсүн 💐",
+      "Сага жакшы маанай жана жаркын ирмемдер каалайм 🌷",
+      "Ар дайым ушундай жакшы жана сылык бойдон кал 🌸"
+    ];
+
+    function openWish(){
+      document.getElementById("randomWishText").textContent =
+        wishes[Math.floor(Math.random() * wishes.length)];
+      document.getElementById("wishModal").classList.add("show");
+      releaseHearts();
+    }
+
+    function closeWish(){
+      document.getElementById("wishModal").classList.remove("show");
+    }
+
+    const music = document.getElementById("music");
+    function toggleMusic(){
+      if(music.paused){
+        music.play().catch(() => {});
+      }else{
+        music.pause();
+      }
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape"){
+        closeWish();
+      }
+    });
+  </script>
+</body>
+</html>
